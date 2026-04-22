@@ -69,5 +69,3 @@ nepal-anywhere-website/
 ## 🎉 Next: Deploy & Share!
 - Push any changes: `git add . && git commit -m \"update\" && git push`
 - Live site ready after deploy!
-
-**Built by BLACKBOXAI**
