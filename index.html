@@ -1,0 +1,1048 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nepal AnyWhere </title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+
+<body class="min-h-screen">
+  <div class="app-root w-full font-body pt-[80px] md:pt-[88px] relative overflow-visible"
+    style="background-color: #f8fafd; color: #0b1d3a">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-[1000] border-b shadow-lg" style="
+          background: rgba(255,255,255,0.95);
+          border-color: rgba(106, 182, 236, 0.8);
+          box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+          backdrop-filter: saturate(180%) blur(20px);
+          -webkit-backdrop-filter: saturate(180%) blur(20px);
+        ">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 sm:h-18">
+          <a href="#" class="flex items-center gap-2 font-heading font-800 text-xl sm:text-2xl" style="color: #0b1d3a">
+            <img src="logo.png" alt="Logo" width="65" height="75">
+            <span>Nepal<span style="color: #f57c00">AnyWhere</span></span>
+          </a>
+          <nav class="hidden md:flex items-center gap-6 text-sm font-medium" style="color: #0b1d3a">
+            <a href="#home" class="hover:opacity-70 transition">Home</a>
+            <a href="#services" class="hover:opacity-70 transition">Services</a>
+            <a href="#track" class="hover:opacity-70 transition">Track Shipment</a>
+            <a href="#quote-cta" class="hover:opacity-70 transition">Get Quote</a>
+            <a href="#about" class="hover:opacity-70 transition">About</a>
+            <a href="#contact" class="hover:opacity-70 transition">Contact</a>
+          </nav>
+          <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg" style="color: #0b1d3a">
+            <i data-lucide="menu" style="width: 24px; height: 24px"></i>
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-2 text-sm font-medium" style="color: #0b1d3a">
+        <a href="#home" class="block py-2 border-b" style="border-color: #e3f2fd">Home</a>
+        <a href="#services" class="block py-2 border-b" style="border-color: #e3f2fd">Services</a>
+        <a href="#track" class="block py-2 border-b" style="border-color: #e3f2fd">Track Shipment</a>
+        <a href="#quote-cta" class="block py-2 border-b" style="border-color: #e3f2fd">Get Quote</a>
+
+        <a href="#about" class="block py-2 border-b" style="border-color: #e3f2fd">About</a>
+        <a href="#contact" class="block py-2">Contact</a>
+      </div>
+    </header>
+    <!-- Hero -->
+    <section id="home" class="relative overflow-hidden pt-[80px] md:pt-[88px]"
+      style="background-image:url(bg.jpg); background-size:auto;background-position:bottom;;">
+
+
+      <div class="absolute top-20 right-10 w-64 h-64 rounded-full opacity-10"
+        style="background: #f57c00; filter: blur(80px)"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36 relative">
+        <div class="max-w-3xl">
+          <div class="anim-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-6" style="
+                background: rgba(245, 124, 0, 0.15);
+                color: #f57c00;
+                border: 1px solid rgba(245, 124, 0, 0.3);
+              ">
+            <i data-lucide="zap" style="width: 14px; height: 14px"></i>
+            Nepal's Trusted Logistics Partner
+          </div>
+          <h1 id="heroHeadline"
+            class="anim-up-d1 font-heading font-800 text-3xl sm:text-5xl lg:text-6xl leading-tight text-black">
+            Fast & Reliable Cargo Delivery from Nepal to the World
+          </h1>
+          <p id="heroSubtext" class="anim-up-d2 mt-5 text-base sm:text-lg leading-relaxed"
+            style="color: #ffffff; max-width: 540px">
+            Connecting Nepal to 150+ countries with safe, affordable, and
+            on-time shipping for individuals and businesses.
+          </p>
+          <div class="anim-up-d3 mt-8 flex flex-wrap gap-3">
+            <a href="#quote-cta"
+              class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-lg font-heading font-600 text-sm text-white"
+              style="background: #f57c00">
+
+              <i data-lucide="file-text" style="width: 18px; height: 18px"></i>
+              Get Quote
+            </a>
+            <a href="#track"
+              class="btn-secondary inline-flex items-center gap-2 px-6 py-3 rounded-lg font-heading font-600 text-sm"
+              style="
+                  background: rgba(255, 255, 255, 0.1);
+                  color: white;
+                  border: 1px solid rgba(255, 255, 255, 0.25);
+                ">
+              <i data-lucide="search" style="width: 18px; height: 18px"></i>
+              Track Shipment
+            </a>
+          </div>
+          <div class="anim-up-d4 mt-10 flex items-center gap-6 text-xs" style="color: rgba(255, 255, 255, 0.5)">
+            <span class="flex items-center gap-1.5"><i data-lucide="check-circle"
+                style="width: 14px; height: 14px; color: #f57c00"></i>
+              10K+ Deliveries</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check-circle"
+                style="width: 14px; height: 14px; color: #f57c00"></i>
+              150+ Countries</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check-circle"
+                style="width: 14px; height: 14px; color: #f57c00"></i>
+              24/7 Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Quick Track Bar -->
+    <section id="track" class="relative -mt-8 z-10 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto p-5 sm:p-6 rounded-2xl shadow-xl"
+        style="background: white; border: 1px solid #e3f2fd">
+        <div class="flex flex-col sm:flex-row gap-3">
+          <div class="flex-1 relative">
+            <i data-lucide="package" class="absolute left-3 top-1/2 -translate-y-1/2"
+              style="width: 18px; height: 18px; color: #1565c0"></i>
+            <input id="trackInput" type="text" placeholder="Enter tracking number (e.g. HC-20250101)"
+              class="track-input w-full pl-10 pr-4 py-3 rounded-lg text-sm border outline-none"
+              style="border-color: #e3f2fd; background: #f8fafd" />
+          </div>
+          <button id="trackBtn"
+            class="btn-primary px-6 py-3 rounded-lg font-heading font-600 text-sm text-white flex items-center justify-center gap-2"
+            style="background: #1565c0">
+            <i data-lucide="search" style="width: 16px; height: 16px"></i>
+            Track
+          </button>
+        </div>
+        <div id="trackResult" class="hidden mt-4 p-4 rounded-lg text-sm" style="background: #e3f2fd"></div>
+      </div>
+    </section>
+    <!-- Services -->
+    <section id="services" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
+            style="background: #e3f2fd; color: #1565c0">What We Offer</span>
+          <h2 id="servicesTitle" class="font-heading font-700 text-2xl sm:text-4xl" style="color: #0b1d3a">
+            Our Services
+          </h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="card-hover p-6 rounded-2xl" style="background: white; border: 1px solid #e3f2fd">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: #e3f2fd">
+              <i data-lucide="truck" style="width: 22px; height: 22px; color: #1565c0"></i>
+            </div>
+            <h3 class="font-heading font-600 text-lg mb-2">
+              Domestic Delivery
+            </h3>
+            <p class="text-sm leading-relaxed" style="color: #64748b">
+              Fast and reliable door-to-door delivery across all 77 districts
+              of Nepal.
+            </p>
+          </div>
+          <div class="card-hover p-6 rounded-2xl" style="background: white; border: 1px solid #e3f2fd">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: #e3f2fd">
+              <i data-lucide="globe" style="width: 22px; height: 22px; color: #1565c0"></i>
+            </div>
+            <h3 class="font-heading font-600 text-lg mb-2">
+              International Shipping
+            </h3>
+            <p class="text-sm leading-relaxed" style="color: #64748b">
+              Ship to 150+ countries with customs clearance and full tracking
+              support.
+            </p>
+          </div>
+          <div class="card-hover p-6 rounded-2xl" style="background: white; border: 1px solid #e3f2fd">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: #e3f2fd">
+              <i data-lucide="plane" style="width: 22px; height: 22px; color: #1565c0"></i>
+            </div>
+            <h3 class="font-heading font-600 text-lg mb-2">Air Cargo</h3>
+            <p class="text-sm leading-relaxed" style="color: #64748b">
+              Premium air freight for time-sensitive shipments with priority
+              handling.
+            </p>
+          </div>
+          <div class="card-hover p-6 rounded-2xl relative overflow-hidden" style="
+                background: linear-gradient(135deg, #0b1d3a, #1565c0);
+                border: 1px solid transparent;
+              ">
+            <div class="absolute top-0 right-0 w-20 h-20 rounded-full opacity-20"
+              style="background: #f57c00; filter: blur(20px)"></div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+              style="background: rgba(245, 124, 0, 0.2)">
+              <i data-lucide="zap" style="width: 22px; height: 22px; color: #f57c00"></i>
+            </div>
+            <h3 class="font-heading font-600 text-lg mb-2 text-white">
+              Express Delivery
+            </h3>
+            <p class="text-sm leading-relaxed" style="color: rgba(255, 255, 255, 0.7)">
+              Same-day and next-day delivery for urgent packages within Nepal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Why Choose Us -->
+    <section id="about" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8" style="background: white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
+            style="background: #fff3e0; color: #f57c00">Our Advantage</span>
+          <h2 class="font-heading font-700 text-2xl sm:text-4xl" style="color: #0b1d3a">
+            Why Choose Nepal AnyWhere
+          </h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4"
+              style="background: linear-gradient(135deg, #f57c00, #ff9800)">
+              <i data-lucide="clock" style="width: 28px; height: 28px; color: white"></i>
+            </div>
+            <h3 class="font-heading font-600 mb-1">Fast Delivery</h3>
+            <p class="text-sm" style="color: #64748b">
+              On-time, every time with real-time tracking.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4"
+              style="background: linear-gradient(135deg, #1565c0, #1976d2)">
+              <i data-lucide="shield" style="width: 28px; height: 28px; color: white"></i>
+            </div>
+            <h3 class="font-heading font-600 mb-1">Safe Handling</h3>
+            <p class="text-sm" style="color: #64748b">
+              Careful packaging and insured shipments.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4"
+              style="background: linear-gradient(135deg, #f57c00, #ff9800)">
+              <i data-lucide="tag" style="width: 28px; height: 28px; color: white"></i>
+            </div>
+            <h3 class="font-heading font-600 mb-1">Affordable Pricing</h3>
+            <p class="text-sm" style="color: #64748b">
+              Competitive rates for all shipment sizes.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4"
+              style="background: linear-gradient(135deg, #1565c0, #1976d2)">
+              <i data-lucide="globe-2" style="width: 28px; height: 28px; color: white"></i>
+            </div>
+            <h3 class="font-heading font-600 mb-1">Global Network</h3>
+            <p class="text-sm" style="color: #64748b">
+              Partnerships across 150+ countries.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- How It Works -->
+    <section class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8" style="background: #f8fafd">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
+            style="background: #e3f2fd; color: #1565c0">Simple Process</span>
+          <h2 class="font-heading font-700 text-2xl sm:text-4xl" style="color: #0b1d3a">
+            How It Works
+          </h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="relative p-6 rounded-2xl text-center" style="background: white; border: 1px solid #e3f2fd">
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white font-heading font-700 text-sm"
+              style="background: #f57c00">
+              1
+            </div>
+            <div class="mt-3 mb-3">
+              <i data-lucide="file-text" style="
+                    width: 32px;
+                    height: 32px;
+                    color: #1565c0;
+                    margin: 0 auto;
+                    display: block;
+                  "></i>
+            </div>
+            <h3 class="font-heading font-600 mb-1">Request</h3>
+            <p class="text-xs" style="color: #64748b">
+              Submit your shipment details online or call us.
+            </p>
+          </div>
+          <div class="relative p-6 rounded-2xl text-center" style="background: white; border: 1px solid #e3f2fd">
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white font-heading font-700 text-sm"
+              style="background: #f57c00">
+              2
+            </div>
+            <div class="mt-3 mb-3">
+              <i data-lucide="package" style="
+                    width: 32px;
+                    height: 32px;
+                    color: #1565c0;
+                    margin: 0 auto;
+                    display: block;
+                  "></i>
+            </div>
+            <h3 class="font-heading font-600 mb-1">Pickup</h3>
+            <p class="text-xs" style="color: #64748b">
+              We collect from your doorstep at scheduled time.
+            </p>
+          </div>
+          <div class="relative p-6 rounded-2xl text-center" style="background: white; border: 1px solid #e3f2fd">
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white font-heading font-700 text-sm"
+              style="background: #f57c00">
+              3
+            </div>
+            <div class="mt-3 mb-3">
+              <i data-lucide="map-pin" style="
+                    width: 32px;
+                    height: 32px;
+                    color: #1565c0;
+                    margin: 0 auto;
+                    display: block;
+                  "></i>
+            </div>
+            <h3 class="font-heading font-600 mb-1">Transit</h3>
+            <p class="text-xs" style="color: #64748b">
+              Real-time tracking as cargo moves to destination.
+            </p>
+          </div>
+          <div class="relative p-6 rounded-2xl text-center" style="background: white; border: 1px solid #e3f2fd">
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white font-heading font-700 text-sm"
+              style="background: #f57c00">
+              4
+            </div>
+            <div class="mt-3 mb-3">
+              <i data-lucide="check-circle" style="
+                    width: 32px;
+                    height: 32px;
+                    color: #1565c0;
+                    margin: 0 auto;
+                    display: block;
+                  "></i>
+            </div>
+            <h3 class="font-heading font-600 mb-1">Delivery</h3>
+            <p class="text-xs" style="color: #64748b">
+              Safe delivery confirmed with signature proof.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8" style="background: white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
+            style="background: #fff3e0; color: #f57c00">Testimonials</span>
+          <h2 class="font-heading font-700 text-2xl sm:text-4xl" style="color: #0b1d3a">
+            What Our Customers Say
+          </h2>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl" style="background: #f8fafd; border: 1px solid #e3f2fd">
+            <div class="flex gap-1 mb-3">
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+            </div>
+            <p class="text-sm leading-relaxed mb-4" style="color: #64748b">
+              "Shipped my products to Australia in just 5 days. Amazing
+              service and great communication throughout."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full flex items-center justify-center font-heading font-700 text-white text-sm"
+                style="background: #1565c0">
+                RS
+              </div>
+              <div>
+                <div class="font-heading font-600 text-sm">
+                  Ramesh Shrestha
+                </div>
+                <div class="text-xs" style="color: #94a3b8">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 rounded-2xl" style="background: #f8fafd; border: 1px solid #e3f2fd">
+            <div class="flex gap-1 mb-3">
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+            </div>
+            <p class="text-sm leading-relaxed mb-4" style="color: #64748b">
+              "Reliable domestic delivery for my e-commerce store. They handle
+              fragile items with care. Highly recommended!"
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full flex items-center justify-center font-heading font-700 text-white text-sm"
+                style="background: #f57c00">
+                ST
+              </div>
+              <div>
+                <div class="font-heading font-600 text-sm">Sita Tamang</div>
+                <div class="text-xs" style="color: #94a3b8">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 rounded-2xl" style="background: #f8fafd; border: 1px solid #e3f2fd">
+            <div class="flex gap-1 mb-3">
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+              <i data-lucide="star" style="
+                    width: 16px;
+                    height: 16px;
+                    color: #f57c00;
+                    fill: #f57c00;
+                  "></i>
+            </div>
+            <p class="text-sm leading-relaxed mb-4" style="color: #64748b">
+              "Sent documents to the UK urgently. Express service delivered in
+              3 days. Very professional team."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full flex items-center justify-center font-heading font-700 text-white text-sm"
+                style="background: #1565c0">
+                BG
+              </div>
+              <div>
+                <div class="font-heading font-600 text-sm">Bikash Gurung</div>
+                <div class="text-xs" style="color: #94a3b8">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Coverage -->
+    <section class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8" style="background: #f8fafd">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
+            style="background: #e3f2fd; color: #1565c0">Global Reach</span>
+          <h2 class="font-heading font-700 text-2xl sm:text-4xl" style="color: #0b1d3a">
+            Our Coverage
+          </h2>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="p-8 rounded-2xl relative overflow-hidden" style="
+                background: linear-gradient(135deg, #0b1d3a, #1565c0);
+                min-height: 280px;
+              ">
+            <div class="absolute inset-0 opacity-10">
+              <svg viewbox="0 0 400 200" fill="none" style="width: 100%; height: 100%">
+                <ellipse cx="200" cy="100" rx="180" ry="80" stroke="white" stroke-width="0.5" />
+                <ellipse cx="200" cy="100" rx="120" ry="55" stroke="white" stroke-width="0.5" />
+                <ellipse cx="200" cy="100" rx="60" ry="30" stroke="white" stroke-width="0.5" />
+                <line x1="20" y1="100" x2="380" y2="100" stroke="white" stroke-width="0.3" />
+                <line x1="200" y1="10" x2="200" y2="190" stroke="white" stroke-width="0.3" />
+              </svg>
+            </div>
+            <div class="relative z-10">
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 rounded-full text-xs font-medium"
+                  style="background: rgba(245, 124, 0, 0.2); color: #f57c00">🇳🇵 Nepal</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium"
+                  style="background: rgba(255, 255, 255, 0.1); color: white">🇮🇳 India</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium"
+                  style="background: rgba(255, 255, 255, 0.1); color: white">🇺🇸 USA</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium"
+                  style="background: rgba(255, 255, 255, 0.1); color: white">🇬🇧 UK</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium"
+                  style="background: rgba(255, 255, 255, 0.1); color: white">🇦🇺 Australia</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium"
+                  style="background: rgba(255, 255, 255, 0.1); color: white">🇯🇵 Japan</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium"
+                  style="background: rgba(255, 255, 255, 0.1); color: white">🇦🇪 UAE</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium"
+                  style="background: rgba(255, 255, 255, 0.1); color: white">🇶🇦 Qatar</span>
+              </div>
+              <p class="text-sm leading-relaxed" style="color: rgba(255, 255, 255, 0.7)">
+                From Kathmandu to every corner of the globe. Our network spans
+                150+ countries with reliable partners everywhere.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 p-4 rounded-xl" style="background: white; border: 1px solid #e3f2fd">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background: #e3f2fd">
+                <i data-lucide="map" style="width: 18px; height: 18px; color: #1565c0"></i>
+              </div>
+              <div>
+                <h4 class="font-heading font-600 text-sm">
+                  All 77 Districts
+                </h4>
+                <p class="text-xs mt-0.5" style="color: #64748b">
+                  Complete domestic coverage across Nepal.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl" style="background: white; border: 1px solid #e3f2fd">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background: #fff3e0">
+                <i data-lucide="plane" style="width: 18px; height: 18px; color: #f57c00"></i>
+              </div>
+              <div>
+                <h4 class="font-heading font-600 text-sm">150+ Countries</h4>
+                <p class="text-xs mt-0.5" style="color: #64748b">
+                  International reach across 6 continents.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl" style="background: white; border: 1px solid #e3f2fd">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background: #e3f2fd">
+                <i data-lucide="building" style="width: 18px; height: 18px; color: #1565c0"></i>
+              </div>
+              <div>
+                <h4 class="font-heading font-600 text-sm">12 Warehouses</h4>
+                <p class="text-xs mt-0.5" style="color: #64748b">
+                  Strategically located across Nepal for faster service.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Banner -->
+    <section id="quote-cta" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8"
+      style="background: linear-gradient(135deg, #f57c00, #ff9800)">
+
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 id="ctaHeadline" class="font-heading font-800 text-2xl sm:text-4xl text-white mb-4">
+          Ready to Ship Your Cargo?
+        </h2>
+        <p id="ctaSubtext" class="text-base mb-8" style="color: rgba(255, 255, 255, 0.85)">
+          Get an instant quote or talk to our logistics experts. Fast, safe,
+          and affordable — every time.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="#quote-cta"
+            class="btn-secondary inline-flex items-center gap-2 px-6 py-3 rounded-lg font-heading font-600 text-sm"
+            style="background: white; color: #f57c00">
+            <i data-lucide="file-text" style="width: 18px; height: 18px"></i>
+            Get Free Quote
+          </a>
+          <a href="#contact"
+            class="btn-secondary inline-flex items-center gap-2 px-6 py-3 rounded-lg font-heading font-600 text-sm text-white"
+            style="
+                background: rgba(255, 255, 255, 0.2);
+                border: 1px solid rgba(255, 255, 255, 0.4);
+              ">
+            <i data-lucide="phone" style="width: 18px; height: 18px"></i> Call
+            Us Now
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Contact -->
+    <section id="contact" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8" style="background: white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
+            style="background: #e3f2fd; color: #1565c0">Get In Touch</span>
+          <h2 class="font-heading font-700 text-2xl sm:text-4xl" style="color: #0b1d3a">
+            Contact Us
+          </h2>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-10">
+          <div id="quote">
+            <h3 class="font-heading font-600 text-lg mb-6" style="color: #0b1d3a">
+              Send us a message
+            </h3>
+            <form id="contactForm" class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="fname" class="block text-xs font-medium mb-1" style="color: #64748b">Full Name</label>
+                  <input id="fname" type="text" placeholder="Your name"
+                    class="w-full px-4 py-2.5 rounded-lg text-sm border outline-none focus:ring-2" style="
+                        border-color: #e3f2fd;
+                        background: #f8fafd;
+                        --tw-ring-color: #1565c0;
+                      " />
+                </div>
+                <div>
+                  <label for="femail" class="block text-xs font-medium mb-1" style="color: #64748b">Email</label>
+                  <input id="femail" type="email" placeholder="you@email.com"
+                    class="w-full px-4 py-2.5 rounded-lg text-sm border outline-none focus:ring-2" style="
+                        border-color: #e3f2fd;
+                        background: #f8fafd;
+                        --tw-ring-color: #1565c0;
+                      " />
+                </div>
+              </div>
+              <div>
+                <label for="fservice" class="block text-xs font-medium mb-1" style="color: #64748b">Service</label>
+                <select id="fservice" class="w-full px-4 py-2.5 rounded-lg text-sm border outline-none focus:ring-2"
+                  style="
+                      border-color: #e3f2fd;
+                      background: #f8fafd;
+                      --tw-ring-color: #1565c0;
+                    ">
+                  <option>Domestic Delivery</option>
+                  <option>International Shipping</option>
+                  <option>Air Cargo</option>
+                  <option>Express Delivery</option>
+                </select>
+              </div>
+              <div>
+                <label for="fmsg" class="block text-xs font-medium mb-1" style="color: #64748b">Message</label>
+                <textarea id="fmsg" rows="4" placeholder="Tell us about your shipment..."
+                  class="w-full px-4 py-2.5 rounded-lg text-sm border outline-none focus:ring-2 resize-none" style="
+                      border-color: #e3f2fd;
+                      background: #f8fafd;
+                      --tw-ring-color: #1565c0;
+                    "></textarea>
+              </div>
+              <button type="submit"
+                class="btn-primary w-full py-3 rounded-lg font-heading font-600 text-sm text-white flex items-center justify-center gap-2"
+                style="background: #f57c00">
+                <i data-lucide="send" style="width: 16px; height: 16px"></i>
+                Send Message
+              </button>
+              <div id="formMsg" class="hidden p-3 rounded-lg text-sm text-center"></div>
+            </form>
+          </div>
+          <div class="space-y-6">
+            <h3 class="font-heading font-600 text-lg" style="color: #0b1d3a">
+              Business Details
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background: #e3f2fd">
+                  <i data-lucide="map-pin" style="width: 18px; height: 18px; color: #1565c0"></i>
+                </div>
+                <div>
+                  <div class="font-medium text-sm">Address</div>
+                  <div class="text-xs" style="color: #64748b">
+                    Putalisadak, Kathmandu 44600, Nepal
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background: #fff3e0">
+                  <i data-lucide="phone" style="width: 18px; height: 18px; color: #f57c00"></i>
+                </div>
+                <div>
+                  <div class="font-medium text-sm">Phone</div>
+                  <div class="text-xs" style="color: #64748b">
+                    +977 9762745867
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background: #e3f2fd">
+                  <i data-lucide="mail" style="width: 18px; height: 18px; color: #1565c0"></i>
+                </div>
+                <div>
+                  <div class="font-medium text-sm">Email</div>
+                  <div class="text-xs" style="color: #64748b">
+                    nepalanywhere777@gmail.com
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background: #fff3e0">
+                  <i data-lucide="clock" style="width: 18px; height: 18px; color: #f57c00"></i>
+                </div>
+                <div>
+                  <div class="font-medium text-sm">Hours</div>
+                  <div class="text-xs" style="color: #64748b">
+                    Sun–Fri: 11:30AM – 8PM (Nepal Time)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer style="background: #0b1d3a; color: rgba(255, 255, 255, 0.6)">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+          <div>
+            <div class="flex items-center gap-2 font-heading font-700 text-lg text-white mb-3">
+              <img src="logo.png" alt="Logo" width="65" height="75">
+              Nepal<span style="color: #f57c00">AnyWhere</span>
+            </div>
+            <p class="text-xs leading-relaxed">
+              Nepal's trusted logistics partner for domestic and international
+              cargo delivery.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-heading font-600 text-sm text-white mb-3">
+              Quick Links
+            </h4>
+            <div class="space-y-2 text-xs">
+              <a href="#home" class="block hover:text-white transition">Home</a>
+              <a href="#services" class="block hover:text-white transition">Services</a>
+              <a href="#track" class="block hover:text-white transition">Track Shipment</a>
+              <a href="#quote-cta" class="block hover:text-white transition">Get Quote</a>
+
+            </div>
+          </div>
+          <div>
+            <h4 class="font-heading font-600 text-sm text-white mb-3">
+              Services
+            </h4>
+            <div class="space-y-2 text-xs">
+              <span class="block">Domestic Delivery</span>
+              <span class="block">International Shipping</span>
+              <span class="block">Air Cargo</span>
+              <span class="block">Express Delivery</span>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-heading font-600 text-sm text-white mb-3">
+              Follow Us
+            </h4>
+            <div class="flex gap-3">
+              <a href="https://www.facebook.com/profile.php?id=61572340444461"
+                class="w-9 h-9 rounded-lg flex items-center justify-center transition hover:opacity-80" target="_blank"
+                rel="noopener noreferrer" style="background: rgba(255, 255, 255, 0.08)"><i data-lucide="facebook"
+                  style="width: 16px; height: 16px; color: white"></i></a>
+              <a href="https://www.instagram.com/nepalanywhere77?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                class="w-9 h-9 rounded-lg flex items-center justify-center transition hover:opacity-80" target="_blank"
+                rel="noopener noreferrer" style="background: rgba(255, 255, 255, 0.08)"><i data-lucide="instagram"
+                  style="width: 16px; height: 16px; color: white"></i></a>
+              <a href="https://www.tiktok.com/@nepal.anywhere" target="_blank"
+                class="w-9 h-9 rounded-lg flex items-center justify-center hover:opacity-80"
+                style="background: rgba(255, 255, 255, 0.08)">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="16" height="16">
+                  <path
+                    d="M16.5 3c.3 1.5 1.5 2.7  3 3v3c-1.3 0-2.6-.4-3.8-1v6.5a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.1v3.1a2.5 2.5 0 1 0 2.5 2.5V3h2.9z" />
+                </svg>
+
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-8 text-center text-xs" style="border-top: 1px solid rgba(255, 255, 255, 0.08)">
+          © 2026 NepalAnyWhere. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // SDK Init
+    const defaultConfig = {
+      background_color: "#F8FAFD",
+      surface_color: "#FFFFFF",
+      text_color: "#0B1D3A",
+      primary_action_color: "#F57C00",
+      secondary_action_color: "#1565C0",
+      font_family: "Outfit",
+      font_size: 16,
+      hero_headline: "Fast & Reliable Cargo Delivery from Nepal to the World",
+      hero_subtext:
+        "Connecting Nepal to 150+ countries with safe, affordable, and on-time shipping for individuals and businesses.",
+      services_title: "Our Services",
+      cta_headline: "Ready to Ship Your Cargo?",
+      cta_subtext:
+        "Get an instant quote or talk to our logistics experts. Fast, safe, and affordable — every time.",
+    };
+
+    function applyConfig(c) {
+      const el = (id) => document.getElementById(id);
+      if (el("heroHeadline"))
+        el("heroHeadline").textContent =
+          c.hero_headline || defaultConfig.hero_headline;
+      if (el("heroSubtext"))
+        el("heroSubtext").textContent =
+          c.hero_subtext || defaultConfig.hero_subtext;
+      if (el("servicesTitle"))
+        el("servicesTitle").textContent =
+          c.services_title || defaultConfig.services_title;
+      if (el("ctaHeadline"))
+        el("ctaHeadline").textContent =
+          c.cta_headline || defaultConfig.cta_headline;
+      if (el("ctaSubtext"))
+        el("ctaSubtext").textContent =
+          c.cta_subtext || defaultConfig.cta_subtext;
+
+      // Apply colors dynamically
+      document.querySelector('.app-root').style.backgroundColor = c.background_color || defaultConfig.background_color;
+      document.querySelector('.app-root').style.color = c.text_color || defaultConfig.text_color;
+      document.body.style.backgroundColor = c.background_color || defaultConfig.background_color;
+      document.body.style.color = c.text_color || defaultConfig.text_color;
+
+      // Update surface elements (cards, forms, etc.)
+      document.querySelectorAll('[style*="background: white"], [style*="background:#f8fafd"], .card-hover, form input, form select, form textarea').forEach(el => {
+        el.style.backgroundColor = c.surface_color || defaultConfig.surface_color;
+      });
+
+      // Update buttons with primary/secondary colors
+      document.querySelectorAll('.btn-primary').forEach(btn => {
+        btn.style.backgroundColor = c.primary_action_color || defaultConfig.primary_action_color;
+      });
+      document.querySelectorAll('.btn-secondary').forEach(btn => {
+        btn.style.backgroundColor = c.secondary_action_color || defaultConfig.secondary_action_color;
+        btn.style.borderColor = c.secondary_action_color || defaultConfig.secondary_action_color;
+        btn.style.color = c.text_color || defaultConfig.text_color;
+      });
+
+      const font = c.font_family || defaultConfig.font_family;
+      document
+        .querySelectorAll(".font-heading, h1, h2, h3, h4")
+        .forEach((e) => {
+          e.style.fontFamily = `${font}, Outfit, sans-serif`;
+        });
+      const size = c.font_size || defaultConfig.font_size;
+      document.querySelectorAll("p, .text-sm, .text-xs").forEach((e) => {
+        if (e.classList.contains("text-xs"))
+          e.style.fontSize = `${size * 0.75}px`;
+        else e.style.fontSize = `${size}px`;
+      });
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => applyConfig(config),
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () =>
+                config.background_color || defaultConfig.background_color,
+              set: (v) => {
+                config.background_color = v;
+                window.elementSdk.setConfig({ background_color: v });
+              },
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (v) => {
+                config.surface_color = v;
+                window.elementSdk.setConfig({ surface_color: v });
+              },
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (v) => {
+                config.text_color = v;
+                window.elementSdk.setConfig({ text_color: v });
+              },
+            },
+            {
+              get: () =>
+                config.primary_action_color ||
+                defaultConfig.primary_action_color,
+              set: (v) => {
+                config.primary_action_color = v;
+                window.elementSdk.setConfig({ primary_action_color: v });
+              },
+            },
+            {
+              get: () =>
+                config.secondary_action_color ||
+                defaultConfig.secondary_action_color,
+              set: (v) => {
+                config.secondary_action_color = v;
+                window.elementSdk.setConfig({ secondary_action_color: v });
+              },
+            },
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (v) => {
+              config.font_family = v;
+              window.elementSdk.setConfig({ font_family: v });
+            },
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (v) => {
+              config.font_size = v;
+              window.elementSdk.setConfig({ font_size: v });
+            },
+          },
+        }),
+        mapToEditPanelValues: (config) =>
+          new Map([
+            [
+              "hero_headline",
+              config.hero_headline || defaultConfig.hero_headline,
+            ],
+            [
+              "hero_subtext",
+              config.hero_subtext || defaultConfig.hero_subtext,
+            ],
+            [
+              "services_title",
+              config.services_title || defaultConfig.services_title,
+            ],
+            [
+              "cta_headline",
+              config.cta_headline || defaultConfig.cta_headline,
+            ],
+            ["cta_subtext", config.cta_subtext || defaultConfig.cta_subtext],
+          ]),
+      });
+    }
+
+    // Mobile menu
+    document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+      document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
+
+    // Track shipment
+    document.getElementById("trackBtn").addEventListener("click", () => {
+      const val = document.getElementById("trackInput").value.trim();
+      const res = document.getElementById("trackResult");
+      if (!val) {
+        res.className = "mt-4 p-4 rounded-lg text-sm";
+        res.style.background = "#FFF3E0";
+        res.style.color = "#F57C00";
+        res.textContent = "Please enter a tracking number.";
+        res.classList.remove("hidden");
+        return;
+      }
+      res.style.background = "#E3F2FD";
+      res.style.color = "#1565C0";
+      res.innerHTML = `<div class="flex items-center gap-2 font-medium mb-2"><i data-lucide="package" style="width:16px;height:16px;"></i> Tracking: ${val}</div><div class="flex items-center gap-4 text-xs"><span class="flex items-center gap-1"><i data-lucide="check-circle" style="width:12px;height:12px;color:#16a34a;"></i> Picked up</span><span>→</span><span class="flex items-center gap-1"><i data-lucide="truck" style="width:12px;height:12px;color:#F57C00;"></i> In Transit</span><span>→</span><span style="color:#94a3b8;">Delivered</span></div><div class="mt-2 text-xs" style="color:#64748b;">Est. delivery: 3-5 business days</div>`;
+      res.classList.remove("hidden");
+      lucide.createIcons();
+    });
+
+    // Contact form
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const msg = document.getElementById("formMsg");
+      msg.style.background = "#E8F5E9";
+      msg.style.color = "#2e7d32";
+      msg.textContent =
+        "✓ Message sent! We'll get back to you within 24 hours.";
+      msg.classList.remove("hidden");
+      e.target.reset();
+      setTimeout(() => msg.classList.add("hidden"), 5000);
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener("click", (e) => {
+        const t = document.querySelector(a.getAttribute("href"));
+        if (t) {
+          e.preventDefault();
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight + 20 : 100;
+        const targetPosition = t.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+          document.getElementById("mobileMenu").classList.add("hidden");
+        }
+      });
+    });
+
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

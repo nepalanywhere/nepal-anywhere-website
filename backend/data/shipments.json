@@ -1,0 +1,35 @@
+[
+  {
+    "trackingNumber": "HC-2553",
+    "status": "In Transit",
+    "currentLocation": "Kathmandu Airport",
+    "pickupDate": "2025-01-01",
+    "estimatedDelivery": "2025-01-05",
+    "stages": [
+      {"name": "Picked up", "status": "completed", "date": "2025-01-01"},
+      {"name": "In Transit", "status": "current", "date": "2025-01-02"}
+    ]
+  },
+  {
+    "trackingNumber": "HC-20250102",
+    "status": "Delivered",
+    "currentLocation": "Customer Address, Dubai",
+    "pickupDate": "2024-12-28",
+    "estimatedDelivery": "2025-01-03",
+    "stages": [
+      {"name": "Picked up", "status": "completed", "date": "2024-12-28"},
+      {"name": "In Transit", "status": "completed", "date": "2024-12-30"},
+      {"name": "Delivered", "status": "completed", "date": "2025-01-03"}
+    ]
+  },
+  {
+    "trackingNumber": "HC-20250103",
+    "status": "Pending Pickup",
+    "currentLocation": "Sender Address, Pokhara",
+    "pickupDate": null,
+    "estimatedDelivery": "2025-01-06",
+    "stages": [
+      {"name": "Pending Pickup", "status": "current"}
+    ]
+  }
+]

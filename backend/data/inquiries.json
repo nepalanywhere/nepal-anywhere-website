@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1776654435450,
+    "name": "Shashwat",
+    "email": "nepalanywhere777@gmail.com",
+    "service": "International Shipping",
+    "message": "hello",
+    "timestamp": "2026-04-20T03:07:15.450Z",
+    "status": "new"
+  },
+  {
+    "id": 1776655662528,
+    "name": "Shashwat",
+    "email": "nepalanywhere777@gmail.com",
+    "service": "International Shipping",
+    "message": "wow",
+    "timestamp": "2026-04-20T03:27:42.528Z",
+    "status": "new"
+  },
+  {
+    "id": 1776655830982,
+    "name": "saswat",
+    "email": "xGrish77@gmail.com",
+    "service": "Express Delivery",
+    "message": "can you please send price detail",
+    "timestamp": "2026-04-20T03:30:30.982Z",
+    "status": "new"
+  },
+  {
+    "id": 1776656971051,
+    "name": "Shashwat",
+    "email": "nepalanywhere777@gmail.com",
+    "service": "Express Delivery",
+    "message": "aaaaaaaaaaaaa",
+    "timestamp": "2026-04-20T03:49:31.051Z"
+  },
+  {
+    "id": 1776657106361,
+    "name": "sas dd",
+    "email": "nepalanywhere777@gmail.com",
+    "service": "International Shipping",
+    "message": "aaaaaaaaaaaaaa",
+    "timestamp": "2026-04-20T03:51:46.361Z"
+  },
+  {
+    "id": 1776657301582,
+    "name": "ayush",
+    "email": "aayushtmg146@gmail.com",
+    "service": "Air Cargo",
+    "message": "at what time will i get my parcel",
+    "timestamp": "2026-04-20T03:55:01.582Z"
+  },
+  {
+    "id": 1776658605751,
+    "name": "kristopher",
+    "email": "kristopher222@gmail.com",
+    "service": "International Shipping",
+    "message": "kristophers ass",
+    "timestamp": "2026-04-20T04:16:45.751Z"
+  },
+  {
+    "id": 1776735912400,
+    "name": "gaurav",
+    "email": "gaurav55@gmail.com",
+    "service": "Air Cargo",
+    "message": "very good",
+    "timestamp": "2026-04-21T01:45:12.400Z"
+  }
+]

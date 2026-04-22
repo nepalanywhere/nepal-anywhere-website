@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nepal AnyWhere Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen p-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
+          <i data-lucide="shield" class="w-8 h-8 text-white"></i>
+        </div>
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+          <p class="text-gray-600">Shipments & Inquiries - Last updated <span id="lastUpdate">-</span></p>
+        </div>
+      </div>
+      
+      <!-- Export Button -->
+      <div class="flex gap-4 mb-8">
+        <button id="exportExcel" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-xl font-semibold flex items-center gap-2 shadow-lg">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          Export All Data to Excel
+        </button>
+        <button id="refreshBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-xl font-semibold flex items-center gap-2 shadow-lg">
+          <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+          Refresh
+        </button>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid md:grid-cols-4 gap-6 mb-8">
+        <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-2xl">
+          <div class="text-2xl font-bold" id="totalShipments">-</div>
+          <div class="text-sm opacity-90">Total Shipments</div>
+        </div>
+        <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-2xl">
+          <div class="text-2xl font-bold" id="totalInquiries">-</div>
+          <div class="text-sm opacity-90">New Inquiries</div>
+        </div>
+        <div class="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-6 rounded-2xl">
+          <div class="text-2xl font-bold" id="inTransit">-</div>
+          <div class="text-sm opacity-90">In Transit</div>
+        </div>
+        <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-6 rounded-2xl">
+          <div class="text-2xl font-bold" id="todayInquiries">-</div>
+          <div class="text-sm opacity-90">Today</div>
+        </div>
+      </div>
+
+      <!-- Shipments Table -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 mb-8">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold flex items-center gap-3">
+            <i data-lucide="package" class="w-7 h-7"></i>
+            Shipments
+          </h2>
+          <button onclick="openAddModal()" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-xl font-semibold flex items-center gap-2 shadow-lg">
+            <i data-lucide="plus" class="w-4 h-4"></i>
+            Add Shipment
+          </button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="p-4 text-left font-semibold text-gray-900">Tracking #</th>
+                <th class="p-4 text-left font-semibold text-gray-900">Status</th>
+                <th class="p-4 text-left font-semibold text-gray-900">Location</th>
+                <th class="p-4 text-left font-semibold text-gray-900">Est. Delivery</th>
+                <th class="p-4 text-left font-semibold text-gray-900">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="shipmentsTable">
+              <tr>
+                <td colspan="4" class="p-8 text-center text-gray-500">
+                  <i data-lucide="loader" class="w-8 h-8 animate-spin mx-auto mb-2"></i>
+                  Loading...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Inquiries Table -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold flex items-center gap-3">
+            <i data-lucide="mail" class="w-7 h-7"></i>
+            Customer Inquiries
+          </h2>
+          <button id="clearInquiries" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-xl font-semibold flex items-center gap-2 shadow-lg">
+            <i data-lucide="trash-2" class="w-4 h-4"></i>
+            Clear All Inquiries
+          </button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="p-4 text-left font-semibold text-gray-900">Name</th>
+                <th class="p-4 text-left font-semibold text-gray-900">Email</th>
+                <th class="p-4 text-left font-semibold text-gray-900">Service</th>
+                <th class="p-4 text-left font-semibold text-gray-900">Message</th>
+                <th class="p-4 text-left font-semibold text-gray-900">Date</th>
+              </tr>
+            </thead>
+            <tbody id="inquiriesTable">
+              <tr>
+                <td colspan="5" class="p-8 text-center text-gray-500">
+                  <i data-lucide="loader" class="w-8 h-8 animate-spin mx-auto mb-2"></i>
+                  Loading...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    async function loadData() {
+      try {
+        const [shipmentsRes, inquiriesRes] = await Promise.all([
+          fetch('/api/admin/shipments'),
+          fetch('/api/admin/inquiries')
+        ]);
+        
+        const shipments = await shipmentsRes.json();
+        const inquiries = await inquiriesRes.json();
+
+        // Stats
+        document.getElementById('totalShipments').textContent = shipments.length;
+        document.getElementById('totalInquiries').textContent = inquiries.length;
+        document.getElementById('inTransit').textContent = shipments.filter(s => s.status === 'In Transit').length;
+        document.getElementById('todayInquiries').textContent = inquiries.filter(i => new Date(i.timestamp).toDateString() === new Date().toDateString()).length;
+
+        // Shipments table
+        const shipmentsTable = document.getElementById('shipmentsTable');
+        shipmentsTable.innerHTML = shipments.map(s => `
+          <tr class="border-b hover:bg-gray-50">
+            <td class="p-4 font-mono text-blue-600">${s.trackingNumber}</td>
+            <td class="p-4">
+              <span class="px-3 py-1 rounded-full text-xs font-semibold ${
+                s.status === 'Delivered' ? 'bg-green-100 text-green-800' :
+                s.status === 'In Transit' ? 'bg-blue-100 text-blue-800' : 'bg-orange-100 text-orange-800'
+              }">${s.status}</span>
+            </td>
+            <td class="p-4 font-medium">${s.currentLocation}</td>
+            <td class="p-4 text-sm text-gray-600">${s.estimatedDelivery || '-'}</td>
+            <td class="p-4 flex gap-2">
+              <button onclick="openEditModal('${s._id}', '${s.trackingNumber}')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs font-semibold flex items-center gap-1">
+                <i data-lucide="edit-2" class="w-3 h-3"></i> Edit
+              </button>
+              <button onclick="deleteShipment('${s._id}')" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs font-semibold flex items-center gap-1">
+                <i data-lucide="trash-2" class="w-3 h-3"></i> Delete
+              </button>
+            </td>
+          </tr>
+        `).join('') || '<tr><td colspan="5" class="p-8 text-center text-gray-500">No shipments</td></tr>';
+
+        // Inquiries table
+        const inquiriesTable = document.getElementById('inquiriesTable');
+        inquiriesTable.innerHTML = inquiries.map(i => `
+          <tr class="border-b hover:bg-gray-50">
+            <td class="p-4 font-semibold">${i.name}</td>
+            <td class="p-4">${i.email}</td>
+            <td class="p-4">
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs">${i.service}</span>
+            </td>
+            <td class="p-4 max-w-md">${i.message}</td>
+            <td class="p-4 text-sm text-gray-600">${new Date(i.timestamp).toLocaleString()}</td>
+          </tr>
+        `).join('') || '<tr><td colspan="5" class="p-8 text-center text-gray-500">No inquiries</td></tr>';
+
+        document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+        lucide.createIcons();
+      } catch (error) {
+        console.error('Load error:', error);
+        document.querySelectorAll('tbody').forEach(tb => {
+          tb.innerHTML = '<tr><td colspan="5" class="p-8 text-center text-red-500">Error loading data</td></tr>';
+        });
+      }
+    }
+
+    // Events
+    document.getElementById('refreshBtn').onclick = loadData;
+
+    // Clear Inquiries
+    document.getElementById('clearInquiries').onclick = async () => {
+      if (confirm('Clear ALL customer inquiries from database? This cannot be undone.')) {
+        try {
+          const res = await fetch('/api/admin/inquiries', { method: 'DELETE' });
+          const data = await res.json();
+          alert(data.message || 'Cleared!');
+          loadData();
+        } catch (error) {
+          alert('Error clearing: ' + error.message);
+        }
+      }
+    };
+
+    // Auto refresh
+    loadData();
+    setInterval(loadData, 30000); // 30s
+
+    // Excel export
+    document.getElementById('exportExcel').onclick = async () => {
+      try {
+        const [shipmentsRes, inquiriesRes] = await Promise.all([
+          fetch('/api/admin/shipments'),
+          fetch('/api/admin/inquiries')
+        ]);
+        const shipments = await shipmentsRes.json();
+        const inquiries = await inquiriesRes.json();
+
+        const csv = [
+          'SHIPMENTS,SHIPMENTS',
+          ...shipments.map(s => `"${s.trackingNumber}","${s.status}","${s.currentLocation}","${s.estimatedDelivery}"`),
+          '',
+          'INQUIRIES,INQUIRIES',
+          ...inquiries.map(i => `"${i.name}","${i.email}","${i.service}","${i.message}","${new Date(i.timestamp).toLocaleString()}"`)
+        ].join('\n');
+
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `nepal-anywhere-data-${new Date().toISOString().split('T')[0]}.csv`;
+        a.click();
+      } catch (error) {
+        alert('Export error: ' + error.message);
+      }
+    };
+
+    // Edit Modal Functions
+    let currentEditingId = null;
+    
+    async function openEditModal(id, trackingNumber) {
+      currentEditingId = id;
+      try {
+        const res = await fetch('/api/admin/shipments');
+        const shipments = await res.json();
+        const shipment = shipments.find(s => s._id === id);
+        
+        if (!shipment) {
+          alert('Shipment not found');
+          return;
+        }
+
+        document.getElementById('editTrackingNumber').textContent = trackingNumber;
+        document.getElementById('editStatus').value = shipment.status;
+        document.getElementById('editLocation').value = shipment.currentLocation || '';
+        document.getElementById('editDelivery').value = shipment.estimatedDelivery || '';
+        document.getElementById('editModal').classList.remove('hidden');
+      } catch (error) {
+        alert('Error loading shipment: ' + error.message);
+      }
+    }
+
+    function closeEditModal() {
+      document.getElementById('editModal').classList.add('hidden');
+      currentEditingId = null;
+    }
+
+    async function saveShipment() {
+      if (!currentEditingId) return;
+
+      const status = document.getElementById('editStatus').value;
+      const currentLocation = document.getElementById('editLocation').value;
+      const estimatedDelivery = document.getElementById('editDelivery').value;
+
+      try {
+        const res = await fetch(`/api/admin/shipments/${currentEditingId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            status,
+            currentLocation,
+            estimatedDelivery
+          })
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          alert('Shipment updated!');
+          closeEditModal();
+          loadData();
+        } else {
+          alert('Error: ' + data.error);
+        }
+      } catch (error) {
+        alert('Error saving: ' + error.message);
+      }
+    }
+
+    async function deleteShipment(id) {
+      if (!confirm('Delete this shipment permanently?')) return;
+
+      try {
+        const res = await fetch(`/api/admin/shipments/${id}`, { method: 'DELETE' });
+        const data = await res.json();
+        if (data.success) {
+          alert('Shipment deleted!');
+          loadData();
+        }
+      } catch (error) {
+        alert('Error deleting: ' + error.message);
+      }
+    }
+
+    // Add Shipment Modal Functions
+    function openAddModal() {
+      document.getElementById('addTrackingNumber').value = '';
+      document.getElementById('addStatus').value = 'Pending Pickup';
+      document.getElementById('addLocation').value = '';
+      document.getElementById('addPickupDate').value = new Date().toISOString().split('T')[0];
+      document.getElementById('addDelivery').value = '';
+      document.getElementById('addModal').classList.remove('hidden');
+    }
+
+    function closeAddModal() {
+      document.getElementById('addModal').classList.add('hidden');
+    }
+
+    async function saveNewShipment() {
+      const trackingNumber = document.getElementById('addTrackingNumber').value.trim();
+      const status = document.getElementById('addStatus').value;
+      const currentLocation = document.getElementById('addLocation').value.trim();
+      const pickupDate = document.getElementById('addPickupDate').value;
+      const estimatedDelivery = document.getElementById('addDelivery').value;
+
+      if (!trackingNumber) {
+        alert('Please enter a tracking number');
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/admin/shipments', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            trackingNumber,
+            status,
+            currentLocation,
+            pickupDate,
+            estimatedDelivery
+          })
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          alert('Shipment created! ✓');
+          closeAddModal();
+          loadData();
+        } else {
+          alert('Error: ' + data.error);
+        }
+      } catch (error) {
+        alert('Error creating shipment: ' + error.message);
+      }
+    }
+  </script>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
+      <h3 class="text-2xl font-bold mb-4">Update Shipment</h3>
+      <p class="text-gray-600 mb-4">Tracking: <span id="editTrackingNumber" class="font-mono font-bold"></span></p>
+      
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-semibold mb-2">Status</label>
+          <select id="editStatus" class="w-full border border-gray-300 rounded-lg p-2 font-medium">
+            <option value="Pending Pickup">Pending Pickup</option>
+            <option value="In Transit">In Transit</option>
+            <option value="Delivered">Delivered</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2">Current Location</label>
+          <input type="text" id="editLocation" placeholder="e.g., Kathmandu, Nepal" class="w-full border border-gray-300 rounded-lg p-2">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2">Estimated Delivery</label>
+          <input type="date" id="editDelivery" class="w-full border border-gray-300 rounded-lg p-2">
+        </div>
+      </div>
+
+      <div class="flex gap-3 mt-6">
+        <button onclick="closeEditModal()" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-semibold">Cancel</button>
+        <button onclick="saveShipment()" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Shipment Modal -->
+  <div id="addModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
+      <h3 class="text-2xl font-bold mb-4">Add New Shipment</h3>
+      
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-semibold mb-2">Tracking Number <span class="text-red-500">*</span></label>
+          <input type="text" id="addTrackingNumber" placeholder="e.g., NAW-2026-001234" class="w-full border border-gray-300 rounded-lg p-2 font-mono">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2">Status</label>
+          <select id="addStatus" class="w-full border border-gray-300 rounded-lg p-2 font-medium">
+            <option value="Pending Pickup">Pending Pickup</option>
+            <option value="In Transit">In Transit</option>
+            <option value="Delivered">Delivered</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2">Current Location</label>
+          <input type="text" id="addLocation" placeholder="e.g., Kathmandu, Nepal" class="w-full border border-gray-300 rounded-lg p-2">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2">Pickup Date</label>
+          <input type="date" id="addPickupDate" class="w-full border border-gray-300 rounded-lg p-2">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2">Estimated Delivery</label>
+          <input type="date" id="addDelivery" class="w-full border border-gray-300 rounded-lg p-2">
+        </div>
+      </div>
+
+      <div class="flex gap-3 mt-6">
+        <button onclick="closeAddModal()" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-semibold">Cancel</button>
+        <button onclick="saveNewShipment()" class="flex-1 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold">Create Shipment</button>
+      </div>
+    </div>
+  </div>
+

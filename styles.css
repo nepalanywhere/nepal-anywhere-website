@@ -1,0 +1,97 @@
+/* Custom Styles */
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+header {
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+.app-root {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.anim-up {
+  animation: fadeUp 0.7s ease both;
+}
+.anim-up-d1 {
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+.anim-up-d2 {
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+.anim-up-d3 {
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+.anim-up-d4 {
+  animation: fadeUp 0.7s 0.4s ease both;
+}
+.anim-slide {
+  animation: slideIn 0.6s ease both;
+}
+.card-hover {
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(11, 29, 58, 0.1);
+}
+.btn-primary {
+  transition: all 0.25s;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245, 124, 0, 0.35);
+}
+.btn-secondary {
+  transition: all 0.25s;
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+}
+.track-input:focus {
+  box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.2);
+}
+body {
+  box-sizing: border-box;
+}
